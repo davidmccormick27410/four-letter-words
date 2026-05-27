@@ -40,13 +40,13 @@ def test_input_is_four_letters_long_pass():
     """
     Checks if word that is four letters long passes the test
     """
-    assert input_is_four_letters_long("pass") == True
+    assert input_is_four_letters_long("pass")  is True
 
 def test_input_is_four_letters_long_fail():
     """
     Checks if word that is not four letters long fails the test
     """
-    assert input_is_four_letters_long("failed") == False
+    assert input_is_four_letters_long("failed") is False
 
 def test_compare_two_words_position_one_pass(the_previous_word):
     """
@@ -57,7 +57,7 @@ def test_compare_two_words_position_one_pass(the_previous_word):
     assert input_is_submitted_word_only_off_by_one_from_the_previous_word(
         the_previous_word,"CITE")
 
-def test_compare_two_words_position_two_pass():
+def test_compare_two_words_position_two_pass(the_previous_word):
     """
     Tests if a valid word differs from a previous word by one letter
     in the second position, like BITE and BATE
@@ -65,14 +65,14 @@ def test_compare_two_words_position_two_pass():
     """
     assert input_is_submitted_word_only_off_by_one_from_the_previous_word(the_previous_word,"BATE")
 
-def test_compare_two_words_position_three_pass():
+def test_compare_two_words_position_three_pass(the_previous_word):
     """
     Tests if a valid word differs from a previous word by one letter
     in the third position, like BITE and BIKE
     """
     assert input_is_submitted_word_only_off_by_one_from_the_previous_word(the_previous_word,"BIKE")
 
-def test_compare_two_words_position_four_pass():
+def test_compare_two_words_position_four_pass(the_previous_word):
     """
     Tests if a valid word differs from a previous word by one letter
     in the fourth position, like BITE and BITS
@@ -80,9 +80,10 @@ def test_compare_two_words_position_four_pass():
     assert input_is_submitted_word_only_off_by_one_from_the_previous_word(the_previous_word,"BITS")
 
 
-def test_input_is_submitted_word_only_off_by_one_from_the_previous_word_fail():
+def test_input_is_submitted_word_only_off_by_one_from_the_previous_word_fail(the_previous_word):
     """
     Tests if a valid word differs from a previous word by more than one letter
     like BITE and FATE
     """
-    assert False
+    assert input_is_submitted_word_only_off_by_one_from_the_previous_word(
+        the_previous_word,"CUTE") is False

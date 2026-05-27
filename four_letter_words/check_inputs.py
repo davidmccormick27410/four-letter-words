@@ -32,3 +32,18 @@ def input_is_submitted_word_only_off_by_one_from_the_previous_word(
     :param submitted_word: 
     :return: 
     """
+    if the_previous_word == "":
+        return True
+    matches = 0
+    if submitted_word[0] == the_previous_word[0]:
+        matches += 1
+    if submitted_word[1] == the_previous_word[1]:
+        matches += 1
+    if submitted_word[2] == the_previous_word[2]:
+        matches += 1
+    if submitted_word[3] == the_previous_word[3]:
+        matches += 1
+
+    if matches == 3:
+        return True
+    return False

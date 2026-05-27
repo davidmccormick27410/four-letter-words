@@ -2,13 +2,19 @@
 This script extracts four letter words from a dictionary of words used in Scrabble.
 """
 from pathlib import Path
-import pandas as pd
 
 file_path = Path('data\\dictionary.txt')
 
-col_names = ['word']
-df = pd.read_csv(file_path, header=None, names=col_names)
+with open(file_path, "r", encoding="utf-8") as file_object:
+    # Perform file operations here
+    the_file = file_object.read().splitlines()
 
-exact_df = df[df['word'].str.len() == 4]
+four_letter_words = [x for x in the_file if len(x) == 4]
 
-exact_df.to_csv('data\\four_letter_words.csv')
+
+# 'w' mode overwrites existing content. Use 'a' to append.
+with open("data\\four_letter_words.txt", "w", encoding="utf-8") as file:
+    file.write("\n".join(four_letter_words) + "\n")
+
+
+
