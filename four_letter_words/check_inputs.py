@@ -25,7 +25,7 @@ class Validator():
 
         self.the_previous_word = ""
 
-    def input_is_four_letters_long(submitted_word: str) -> bool:
+    def input_is_four_letters_long(self,submitted_word: str) -> bool:
         """
 
         :param submitted_word:
