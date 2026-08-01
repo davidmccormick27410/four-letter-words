@@ -63,3 +63,24 @@ class Validator():
         if matches == 3:
             return True
         return False
+
+    def input_is_submitted_word_only_off_by_one_from_the_previous_word(
+            self,submitted_word,previous_word):
+        """
+        :param submitted_word:
+        :return:
+        """
+        if previous_word == "":
+            return True
+        matches = 0
+        if submitted_word[0] == previous_word[0]:
+            matches += 1
+        if submitted_word[1] == previous_word[1]:
+            matches += 1
+        if submitted_word[2] == previous_word[2]:
+            matches += 1
+        if submitted_word[3] == previous_word[3]:
+            matches += 1
+        if matches == 3:
+            return True
+        return False
