@@ -84,3 +84,13 @@ def test_input_is_submitted_word_only_off_by_one_from_the_previous_word_fail():
     val = Validator()
     val.the_previous_word = "BITE"
     assert val.input_is_submitted_word_only_off_by_one_from_the_previous_word("CUTE") is False
+
+def test_submitted_word_is_not_already_in_list_pass():
+    val = Validator()
+    the_list = ["TELL","TALL","CALL"]
+    assert val.submitted_word_is_not_already_in_list("CELL", the_list) is True
+
+def test_submitted_word_is_not_already_in_list_fail():
+    val = Validator()
+    the_list = ["TELL","TALL","CALL"]
+    assert val.submitted_word_is_not_already_in_list("TELL",the_list) is False
